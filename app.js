@@ -12,7 +12,7 @@ const Post = require('./models/Post');
 const defineAssociations = require('./models/associations'); 
 
 const app = express();
-const port = process.env.PORT || 3000; // penting: gunakan process.env.PORT
+const port = process.env.PORT || 8080; // penting: gunakan process.env.PORT
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
