@@ -1,0 +1,13 @@
+<%- include('partials/header', { title: typeof title !== 'undefined' ? title : 'Terjadi Kesalahan' }) %>
+
+<main class="main-content" style="text-align: center; padding: 50px;">
+    <h1 style="font-size: 4em; margin-bottom: 20px;">Oops!</h1>
+    <h2 style="color: #d9534f; margin-bottom: 30px;">Terjadi Kesalahan Server</h2>
+    <p style="font-size: 1.1em;">Maaf, terjadi masalah saat memproses permintaan Anda.</p>
+    <% if (typeof message !== 'undefined' && message) { %>
+        <p style="color: #888; font-style: italic;"><%= message %></p>
+    <% } %>
+    <p><a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Kembali ke Beranda</a></p>
+</main>
+
+<%- include('partials/footer') %>

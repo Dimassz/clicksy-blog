@@ -1,0 +1,127 @@
+<%- include('partials/header', { title: 'Halaman Beranda' }) %>
+
+    <main class="main-content article-page">
+        <div class="container">
+            <article class="blog-article">
+                <header class="article-header">
+                    <h1 class="article-title"><%= article.title %></h1>
+                    <div class="article-meta">
+                        Ditulis oleh
+                <% if (article.author) { %>
+                    <a href="/author/<%= article.author.username %>">
+                        <%= article.author.username %>
+                    </a>
+                <% } else { %>
+                    Penulis tidak dikenal
+                <% } %>
+                pada <%= new Date(article.publishedAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                <span class="view-count"></span>
+                    </div>
+                </header>
+
+                <figure class="article-featured-image">
+                    <img src="https://via.placeholder.com/1200x600/f2620f/ffffff?text=Inovasi+AI+Masa+Depan" alt="Gambar Utama Artikel AI">
+                    <figcaption>Ilustrasi kecerdasan buatan yang berinteraksi dengan manusia.</figcaption>
+                </figure>
+
+                <div class="article-content">
+                     <%- article.content %>
+                </div>
+
+                <footer class="article-footer">
+                    <div class="article-tags">
+                        <strong>Tag:</strong>
+                        <a href="#">#Teknologi</a>
+                        <a href="#">#AI</a>
+                        <a href="#">#Inovasi</a>
+                        <a href="#">#MasaDepan</a>
+                    </div>
+                    <div class="share-buttons">
+                        <strong>Bagikan:</strong>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=URL_ARTIKEL_ANDA" target="_blank" title="Bagikan di Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=URL_ARTIKEL_ANDA&text=Judul_Artikel" target="_blank" title="Bagikan di Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_ARTIKEL_ANDA&title=Judul_Artikel" target="_blank" title="Bagikan di LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?text=Judul_Artikel%20URL_ARTIKEL_ANDA" target="_blank" title="Bagikan melalui WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </footer>
+            </article>
+
+            <aside class="related-posts">
+                <h3>Artikel Terkait</h3>
+                <div class="post-grid">
+                    <article class="post-card">
+                        <img src="https://via.placeholder.com/600x400/ccc/555?text=Robotika" alt="Gambar Artikel Terkait Robotika">
+                        <div class="post-content">
+                            <h4><a href="#">Mengenal Lebih Dekat Dunia Robotika Modern</a></h4>
+                            <p class="post-meta">Oleh <span class="author">Dr. Robotika</span></p>
+                            <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <img src="https://via.placeholder.com/600x400/ccc/555?text=BigData" alt="Gambar Artikel Terkait Big Data">
+                        <div class="post-content">
+                            <h4><a href="#">Menguak Potensi Big Data di Industri 4.0</a></h4>
+                            <p class="post-meta">Oleh <span class="author">Data Ahli</span></p>
+                            <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+
+            <section class="comments-section">
+                <h3>Tinggalkan Komentar</h3>
+                <form class="comment-form">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" required placeholder="Nama Lengkap Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required placeholder="Alamat Email Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Komentar:</label>
+                        <textarea id="comment" rows="6" required placeholder="Tulis komentar Anda di sini..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-comment">Kirim Komentar</button>
+                </form>
+
+                <div class="comments-list">
+                    <h4>3 Komentar</h4>
+                    <div class="comment-item">
+                        <div class="comment-meta">
+                            <strong>Pengguna A</strong> pada 27 Juni 2025
+                        </div>
+                        <p>Artikel yang sangat informatif dan membuka wawasan! Penjelasan tentang deep learning sangat mudah dipahami. Terima kasih!</p>
+                        <span class="reply-link">Balas</span>
+                    </div>
+                    <div class="comment-item nested-comment">
+                        <div class="comment-meta">
+                            <strong>Admin Blog</strong> pada 27 Juni 2025
+                        </div>
+                        <p>Terima kasih banyak atas apresiasinya, Pengguna A! Kami senang artikel ini bermanfaat.</p>
+                        <span class="reply-link">Balas</span>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-meta">
+                            <strong>Pembaca B</strong> pada 26 Juni 2025
+                        </div>
+                        <p>Bagaimana AI dapat membantu dalam industri kreatif seperti musik atau seni? Apakah ada artikel lanjutan tentang topik ini?</p>
+                        <span class="reply-link">Balas</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+  <%- include('partials/footer') %>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

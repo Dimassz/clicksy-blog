@@ -1,0 +1,49 @@
+{
+  
+  "name": "blog-dev",
+  
+  "version": "1.0.0",
+  
+  "main": "app.js",
+  
+  "scripts": {
+  
+    
+  "start": "node app.js",
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1"
+  
+  },
+  
+  "dependencies": {
+  
+    
+  "bcryptjs": "^3.0.2",
+  
+    
+  "dotenv": "^16.6.0",
+  
+    
+  "ejs": "^3.1.10",
+  
+    
+  "express": "^4.21.2",
+  
+    
+  "mysql2": "^3.14.1",
+  
+    
+  "nodemon": "^3.1.10",
+  
+    
+  "sequelize": "^6.37.7"
+  
+  },
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "description": ""
+}
